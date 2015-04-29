@@ -81,47 +81,7 @@ TextField: {
     borderColor :'orange',
     borderWidth :0
 },
-'#createAcctView' : {
-   visible: false,
-   width: Ti.UI.SIZE,
-   height: Ti.UI.SIZE,
-   top: '90dp',
-   layout: 'vertical',
-   backgroundColor: 'transparent'
-},
-'#accountText' :{
-   text: "Account Text Goes Here For the App",
-   font:{
-    fontSize: '24dp',
-    fontWeight: 'bold'
-   }
-},
-'#cavContainer' : {
-   top: '20dp',
-   width: '280dp',
-   height: Ti.UI.SIZE,
-   layout: 'vertical',
-},
-'#acct_fname' : {
-   hintText: 'first name'
-},
-'#acct_lname' : {
-   hintText: 'last name'
-},
-'#acct_email' : {
-   hintText: 'email address'
-},
-'#acct_password' : {
-   passwordMask: true,
-   hintText: 'password'
-},
-'#acct_password_confirmation' : {
-   passwordMask: true,
-   hintText: 'password confirmation'
-},
-'#cancelCreateAcctBtn' : {
-   left: '10dp'
-},
-'#doCreateAcctBtn' : {
-   left: '0dp'
+'#password' : {
+	passwordMask : true
 }
+

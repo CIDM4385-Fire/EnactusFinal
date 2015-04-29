@@ -1,8 +1,10 @@
-'#list' : {
-	
-	backgroundColor : "white"
-		
-}
-"ListItem": {
-	accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
+"#win" : {
+	backgroundColor: "white" //grey
+},
+"#line": {
+	backgroundColor: "black", 
+	left: "55dp",
+	top: "10dp",
+	height: Ti.UI.FILL,
+	width: "2dp",
 }

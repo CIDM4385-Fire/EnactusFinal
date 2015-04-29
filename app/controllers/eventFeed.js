@@ -2,11 +2,6 @@ var Cloud = require('ti.cloud');
 Cloud.debug = true;
 
 
-function openMenu() {
-    var index = Alloy.createController("index").getView();
-	index.open();
-   } 
-
 
 //$.list.setMarker({sectionIndex:0,itemIndex:100});
 
@@ -15,11 +10,12 @@ var plainTemplate = {
         type: "Ti.UI.Label",
         bindId: "area",
         properties: {
-            backgroundColor: "#FFFFFF",
-            width: "260dp",
+            backgroundColor: "white",
+            right: "10dp",
             top: "10dp",
-            bottom: "10dp",
+            bottom: "12dp",
             left: "75dp",
+            borderColor : 'black',
             borderRadius: "5dp",
             separatorColor: "#253640"
         }
@@ -27,12 +23,14 @@ var plainTemplate = {
         type: "Ti.UI.Label",
         bindId: "title",
         properties: {
+        	height: Ti.UI.FILL,
+            width: Ti.UI.FILL,
             color: "#565656",
             font: {
                 fontFamily: "Arial",
-                fontSize: "21dp"
+                fontSize: "18dp"
             },
-            left: "100dp",
+            left: "120dp",
             top: "20dp"
         },
         separatorColor: "#253640"
@@ -40,26 +38,29 @@ var plainTemplate = {
         type: "Ti.UI.Label",
         bindId: "textDetails",
         properties: {
-            color: "gray",
+        	height: Ti.UI.FILL,
+            width: Ti.UI.FILL,
+            color: "black",
             font: {
                 fontFamily: "Arial",
                 fontSize: "14dp"
             },
             left: "100dp",
-            top: "50dp"
+            top: "50dp",
+            bottom : "12dp"
         }
     }, {
     	type: "Ti.UI.Label",
     	bindId: "date",
     	properties:{
     	height:"50dp",
-    	left: "0dp",
+    	left: "6dp",
     	width: "60dp",
-    	top: "10dp",
+    	top: "5dp",
     	right: "200dp", 
-    	color: "red",
+    	color: "black",
     	borderRadius: "3dp",
-    	backgroundColor: "FFFFFF",
+    	backgroundColor : "white",
     	separatorColor: "#253640"
     	}
     },
@@ -81,7 +82,7 @@ var section = Ti.UI.createListSection();
  var data = [];
  var sectionViews = [];
 
-var eventList = ['55402fdc54add893d5b66618'];
+var eventList = ['55402fdc54add893d5b66618', '5541288e08c91ee922eb1fd7'];
 
 
 for ( var i = 0; i < eventList.length; i++) {
@@ -90,12 +91,15 @@ Cloud.Events.show({
 }, function (e) {
     if (e.success) {
         var event = e.events[0];
+		    var moment = require('alloy/moment');
+			var day = moment(event.start_time, "YYYY-MM-DD:HH:mm:ssZZ");
+			var newDate = day.format("MM-DD");
   
     data.push({
     	        area : {},
             	title : { text: event.name},
             	textDetails: { text: event.details},
-            	date: {text:event.start_time},
+            	date: {text: newDate},
     	
  
         
