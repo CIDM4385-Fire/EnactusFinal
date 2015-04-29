@@ -1,0 +1,8 @@
+<Alloy>
+	<Window id="win" class="container">
+		<View id="myView">
+			
+		</View>
+		<View id="line" class="line"></View>
+	</Window>
+</Alloy>

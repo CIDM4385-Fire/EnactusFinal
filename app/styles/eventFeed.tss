@@ -1,0 +1,8 @@
+'#list' : {
+	
+	backgroundColor : "white"
+		
+}
+"ListItem": {
+	accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
+}
